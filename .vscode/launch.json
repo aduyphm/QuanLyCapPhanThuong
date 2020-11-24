@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - QuanLyNhanKhau",
+            "request": "launch",
+            "vmArgs": "--module-path D:/Java/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "QuanLyNhanKhau"
+        }
+    ]
+}

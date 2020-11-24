@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TabPane id="MainFrame" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/MainFrameCss.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFrameGUIController">
+  <tabs>
+    <Tab id="TrangChu" fx:id="trangChu" closable="false" text="Trang chủ">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbox">
+               <children>
+                  <VBox prefHeight="658.0" prefWidth="194.0" styleClass="vbox">
+                     <children>
+                        <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Tổng quan" />
+                        <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Lịch" />
+                     </children>
+                  </VBox>
+                  <StackPane prefHeight="658.0" prefWidth="1157.0" styleClass="stack-pane">
+                     <children>
+                        <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
+                           <children>
+                              <Label text="Đây là tổng quan" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="472.0" AnchorPane.rightAnchor="397.0" AnchorPane.topAnchor="300.0" />
+                           </children></AnchorPane>
+                        <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
+                           <children>
+                              <Label layoutX="472.0" layoutY="300.0" text="Đây là lịch" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="472.0" AnchorPane.rightAnchor="471.0" AnchorPane.topAnchor="300.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </content>
+      </Tab>
+    <Tab fx:id="dsKhuyenHoc" closable="false" text="Phát phần thưởng khuyến học">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbox">
+               <children>
+                  <VBox prefHeight="658.0" prefWidth="194.0" styleClass="vbox">
+                     <children>
+                        <ToggleButton fx:id="dsHsPTKhuyenHoc" mnemonicParsing="false" prefHeight="50.0" prefWidth="285.0" text="Danh sách" />
+                        <ToggleButton fx:id="dsPTKHTheoNha" mnemonicParsing="false" prefHeight="50.0" prefWidth="195.0" text="Thống kê theo nhà" />
+                        <ToggleButton fx:id="dsPTKHTheoDip" mnemonicParsing="false" prefHeight="50.0" prefWidth="195.0" text="Thống kê theo dịp" />
+                     </children>
+                  </VBox>
+                  <StackPane prefWidth="3000.0" styleClass="stack-pane">
+                     <children>
+                        <AnchorPane styleClass="anchor-pane">
+                           <children>
+                              <TableView editable="true" prefHeight="1029.0" prefWidth="1772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn editable="false" prefWidth="130.0" sortable="false" text="ID" />
+                                    <TableColumn prefWidth="362.0" sortable="false" text="Danh sách học sinh" />
+                                 </columns>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children></AnchorPane>
+                        <AnchorPane styleClass="anchor-pane">
+                           <children>
+                              <TableView editable="true" prefHeight="1029.0" prefWidth="1772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn editable="false" prefWidth="130.0" sortable="false" text="ID" />
+                                    <TableColumn prefWidth="362.0" sortable="false" text="Thống kê theo nhà" />
+                                 </columns>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children></AnchorPane>
+                        <AnchorPane styleClass="anchor-pane">
+                           <children>
+                              <TableView editable="true" prefHeight="1029.0" prefWidth="1772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn editable="false" prefWidth="130.0" sortable="false" text="ID" />
+                                  <TableColumn prefWidth="362.0" sortable="false" text="Thông kê theo dịp" />
+                                </columns>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+                  <ToolBar orientation="VERTICAL" prefHeight="667.0" prefWidth="50.0">
+                    <items>
+                      <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/checked.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/checked.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/checked.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                    </items>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ToolBar>
+               </children>
+            </HBox>
+         </content>
+      </Tab>
+      <Tab fx:id="dsQua" closable="false" text="Phát quà dịp đặc biệt">
+         <content>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="hbox">
+               <children>
+                  <VBox prefHeight="658.0" prefWidth="194.0" styleClass="vbox">
+                     <children>
+                        <ToggleButton fx:id="dsChildQua" mnemonicParsing="false" prefHeight="50.0" prefWidth="284.0" text="Danh sách" />
+                        <ToggleButton fx:id="dsQuaTheoNha" mnemonicParsing="false" prefHeight="50.0" prefWidth="237.0" text="Thống kê theo nhà">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton fx:id="dsQuaTheoDip" mnemonicParsing="false" prefHeight="50.0" prefWidth="237.0" text="Thống kê theo dịp" />
+                     </children>
+                  </VBox>
+                  <StackPane prefWidth="3000.0" styleClass="stack-pane">
+                     <children>
+                        <AnchorPane styleClass="anchor-pane">
+                           <children>
+                              <TableView editable="true" prefHeight="1029.0" prefWidth="1772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn editable="false" prefWidth="130.0" sortable="false" text="ID" />
+                                    <TableColumn prefWidth="362.0" sortable="false" text="Danh sách " />
+                                 </columns>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children></AnchorPane>
+                        <AnchorPane styleClass="anchor-pane">
+                           <children>
+                              <TableView editable="true" prefHeight="1029.0" prefWidth="1772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn editable="false" prefWidth="130.0" sortable="false" text="ID" />
+                                    <TableColumn prefWidth="362.0" sortable="false" text="Thông kê theo nhà" />
+                                 </columns>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children></AnchorPane>
+                        <AnchorPane styleClass="anchor-pane">
+                           <children>
+                              <TableView editable="true" prefHeight="1029.0" prefWidth="1772.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn editable="false" prefWidth="130.0" sortable="false" text="ID" />
+                                    <TableColumn prefWidth="362.0" sortable="false" text="Thông kê theo dịp" />
+                                 </columns>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children></AnchorPane>
+                     </children>
+                  </StackPane>
+                  <ToolBar orientation="VERTICAL" prefHeight="667.0" prefWidth="50.0">
+                     <items>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/checked.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/checked.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/checked.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </items>
+                  </ToolBar>
+               </children>
+            </HBox>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
