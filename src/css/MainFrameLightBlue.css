@@ -1,7 +1,7 @@
 .root {
 	-fx-focus-color: transparent;
 	-fx-faint-focus-color: transparent;
-	-fx-background-color: whitesmoke;
+	-fx-background-color: transparent;
 }
 
 .tab-label {
@@ -22,7 +22,6 @@
 	-fx-pref-width: 200px;
 	-fx-alignment: center;
 	-fx-font-size: 23px;
-	//-fx-text-fill: white;
 }
 
 #TrangChu:selected {
@@ -107,7 +106,7 @@
 }
 
 .anchor-pane {
-	-fx-background-color: whitesmoke;
+	-fx-background-color: white;
 }
 
 .table-view {
@@ -134,10 +133,6 @@
 	-fx-border-color: #a9a9a9;
 	-fx-border-style: hidden solid solid hidden;
 	-fx-background-color: #4db8ff;
-}
-
-.table-view .column-header-background{
-	-fx-padding: 0 25px 0 0;
 }
 
 .table-view .table-row-cell {
@@ -170,7 +165,7 @@
 .tool-bar {
 	-fx-padding: -1px -1px 0px -1px;
 	-fx-spacing: 0px;
-	-fx-border-color: transparent;
+	-fx-border-color: white;
 	-fx-border-radius: 0px;
 	-fx-background-color: #ebf5ff;
 }

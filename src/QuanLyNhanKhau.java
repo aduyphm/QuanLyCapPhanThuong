@@ -1,12 +1,16 @@
 
-import controller.MainFrameGUIController;
+import controller.guicontroller.MainFrameGUIController;
 import javafx.application.Application;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 //import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 //import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import service.DatabaseConnection;
 
 /* import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,6 +22,7 @@ import java.sql.Date; */
 public class QuanLyNhanKhau extends Application {
 
     // private static Connection myConnection;
+    static MainFrameGUIController mainFrameController;
     public static void main(String[] args) {
         /*
          * try { myConnection = DriverManager.getConnection(
@@ -49,10 +54,14 @@ public class QuanLyNhanKhau extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        //mainFrameController.print();
+            
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        DatabaseConnection.initializeConnection("localhost", "3306");
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("/fxml/MainFrame.fxml").openStream());
         //root.setStyleSheet("/fxml/MainFrameCss.css");
@@ -61,16 +70,23 @@ public class QuanLyNhanKhau extends Application {
 
         Scene scene = new Scene(root);
 
-        MainFrameGUIController mainFrameController = (MainFrameGUIController) fxmlLoader.getController();
+        mainFrameController = (MainFrameGUIController) fxmlLoader.getController();
         mainFrameController.init(root);
         scene.getStylesheets().add("/css/MainFrameCss.css");
 
         primaryStage.setTitle("Sample application"); 
+        primaryStage.setScene(scene);
+        primaryStage.getScene().getWindow().addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, new EventHandler<Event>(){
+            @Override 
+            public void handle(Event e) { 
+                mainFrameController.onClose();
+            } 
+        });
         /* primaryStage.setX(bounds.getMinX());
         primaryStage.setY(bounds.getMinY());
         primaryStage.setWidth(bounds.getWidth());
         primaryStage.setHeight(bounds.getHeight()); */
-        primaryStage.setScene(scene);
+        
         primaryStage.show();
 
     }

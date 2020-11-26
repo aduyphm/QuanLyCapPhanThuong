@@ -2,7 +2,7 @@ package entity;
 
 import java.util.*;
 
-public class PhatQuaCuoiNamRecord {
+public class PhanThuongCuoiNamRecord {
 
 	private int ID;
 	private int idHocSinh;
@@ -54,7 +54,7 @@ public class PhatQuaCuoiNamRecord {
 		this.giaTri = giaTri;
 	}
 	
-	public PhatQuaCuoiNamRecord(int iD, int idHocSinh, Date ngayNhan, String namHoc, int idPhanQua, int soPhanQua,
+	public PhanThuongCuoiNamRecord(int iD, int idHocSinh, Date ngayNhan, String namHoc, int idPhanQua, int soPhanQua,
 			int giaTri) {
 		super();
 		ID = iD;

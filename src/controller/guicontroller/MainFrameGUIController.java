@@ -1,10 +1,13 @@
-package controller;
+package controller.guicontroller;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Set;
 
+import controller.Demo;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,15 +16,23 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
+import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import service.DatabaseConnection;
 
 class InsideMainFrameTab {
-    // toggleButton[i] ---> pane[i]
+    // toggleButton[i] ---> pane[i] and a pane[i] has a table view
     private Node[] toggleButtons;
     private Node[] pane;
     private StackPane stackPane;
+    public static ObservableList<Object> list1;
 
     InsideMainFrameTab(Set<Node> buttons, Set<Node> inPane, Node inStackPane){
         this.pane = inPane.toArray(new Node[0]);
@@ -51,6 +62,49 @@ class InsideMainFrameTab {
         }
     }
 
+    public <T> void setItemForTable(int tableIndex, ObservableList<T> list){
+        Node cur = pane[tableIndex];
+        @SuppressWarnings("unchecked")
+        TableView<T> table =  (TableView<T>)cur.lookup(".table-view");
+        
+        final ObservableList<TablePosition> selectedCells = table.getSelectionModel().getSelectedCells();
+
+        TableColumn firstNameCol = new TableColumn("First Name");
+
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<Demo, String>("name"));
+        firstNameCol.setCellFactory(TextFieldTableCell.<Demo>forTableColumn());
+
+        selectedCells.addListener(new ListChangeListener<TablePosition>() {
+            @Override
+            public void onChanged(Change change) {
+                table.edit(-1, firstNameCol);
+            }
+        });
+        
+        table.getColumns().add(firstNameCol);
+        list1 = FXCollections.observableArrayList(
+            (T)(new Demo("HAha")), (T)(new Demo("HAha1")), (T)(new Demo("HAha2"))
+        );
+
+        for (int i = 0; i < 50; i++) {
+            list1.add((T)(new Demo("HAha" + Integer.toString(i))));
+        }
+
+        table.setItems((ObservableList<T>) list1);
+
+    }
+
+    public void setTable(int index, TableView table){
+        //TableView table = (TableView)pane[index].lookup(".table-view");
+        AnchorPane anchorPane = (AnchorPane)pane[index];
+        anchorPane.getChildren().addAll(table);
+        table.toFront();
+    }
+
+    public TableView getTable(int index){
+        return (TableView)pane[index].lookup(".table-view");
+    }
+
     public Node[] getToggleButtons() {
         return this.toggleButtons;
     }
@@ -78,46 +132,13 @@ class InsideMainFrameTab {
 }
 
 public class MainFrameGUIController extends Node implements Initializable {
-    /* @FXML
-    private ToggleButton trangChuTongQuan;
-    @FXML
-    private ToggleButton trangChuLich; */
-
-    /* @FXML
-    private ToggleButton dsHsPTKhuyenHoc;
-    @FXML
-    private ToggleButton dsPTKHTheoNha;
-    @FXML
-    private ToggleButton dsPTKHTheoDip;
-    @FXML
-    private ToggleButton dsChildQua;
-    @FXML
-    private ToggleButton dsQuaTheoNha;
-    @FXML
-    private ToggleButton dsQuaTheoDip;
-
-    ArrayList<ToggleButton> toggleButtons = new ArrayList<>(); */
 
     @FXML
     private TabPane root;
-    @FXML
-    private Tab trangChu;
-    @FXML
-    private Tab dsKhuyenHoc;
-    @FXML
-    private Tab dsQua;
-
     private ArrayList<InsideMainFrameTab> tabs = new ArrayList<>();
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        /* toggleButtons.add(dsHsPTKhuyenHoc);
-        toggleButtons.add(dsPTKHTheoNha);
-        toggleButtons.add(dsPTKHTheoDip);
-        toggleButtons.add(dsChildQua);
-        toggleButtons.add(dsQuaTheoNha);
-        toggleButtons.add(dsQuaTheoDip);
-        setActionForAllToggleButton(); */
     }
 
     public void init(Parent root) {
@@ -135,6 +156,19 @@ public class MainFrameGUIController extends Node implements Initializable {
                 curRoot.lookupAll(".anchor-pane"), curRoot.lookup(".stack-pane")));
         }
 
+        //tabs.get(1).<Demo>setItemForTable(1, null);
+        PhanThuongCuoiNamGuiController ptcnGuiController = new PhanThuongCuoiNamGuiController(tabs.get(1).getTable(0));
+        //tabs.get(1).setTable(0, ptcnGuiController.getTable());
+    }
+
+    public void onClose(){
+        DatabaseConnection.closeConnection();
+    }
+
+    public void print(){
+        /* for(Object obj : InsideMainFrameTab.list1){
+            System.out.println(((Demo)obj).getName());
+        } */
     }
 
 }
