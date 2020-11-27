@@ -58,4 +58,13 @@ public class HoGiaDinh {
 		this.ngayLap = ngayLap;
 	}
 	
+	public HoGiaDinh(ResultSet result) throws SQLException {
+		this.ID = result.getInt("ID");
+		this.maHoGiaDinh = result.getString("maHoGiaDinh");
+		this.idChuHo = result.getInt("idChuHo");
+		this.maKhuVuc = result.getString("maKhuVuc");
+		this.diaChi = result.getString("diaChi");
+		this.ngayLap = result.getDate("ngayLap");
+	}
+	
 }
