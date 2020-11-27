@@ -56,4 +56,13 @@ public class HocSinh {
 		this.thanhTichDacBiet = thanhTichDacBiet;
 	}
 	
+	public HocSinh(ResultSet result) throws SQLException {
+		this.ID = result.getInt("ID");
+		this.idNhanKhau = result.getInt("idNhanKhau");
+		this.lop = result.getString("lop");
+		this.truong = result.getString("truong");
+		this.hocLuc = result.getString("hocLuc");
+		this.thanhTichDacBiet = result.getString("thanhTichDacBiet");
+	}
+	
 }
