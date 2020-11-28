@@ -20,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToolBar;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseEvent;
@@ -32,12 +33,14 @@ class InsideMainFrameTab {
     private Node[] toggleButtons;
     private Node[] pane;
     private StackPane stackPane;
+    private ToolBar toolBar;
     public static ObservableList<Object> list1;
 
-    InsideMainFrameTab(Set<Node> buttons, Set<Node> inPane, Node inStackPane){
+    InsideMainFrameTab(Set<Node> buttons, Set<Node> inPane, Node inStackPane, Node toolBar){
         this.pane = inPane.toArray(new Node[0]);
         this.toggleButtons = buttons.toArray(new Node[0]);
         this.stackPane = (StackPane)inStackPane;
+        this.toolBar = (ToolBar)toolBar;
 
         ((ToggleButton)toggleButtons[0]).setSelected(true);
         ((ToggleButton)toggleButtons[0]).setStyle(
@@ -129,6 +132,14 @@ class InsideMainFrameTab {
         this.stackPane = stackPane;
     }
 
+    public ToolBar getToolBar() {
+        return toolBar;
+    }
+
+    public void setToolBar(ToolBar toolBar) {
+        this.toolBar = toolBar;
+    }
+
 }
 
 public class MainFrameGUIController extends Node implements Initializable {
@@ -150,15 +161,20 @@ public class MainFrameGUIController extends Node implements Initializable {
 
         ObservableList<Tab> allTabs = this.root.getTabs();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < allTabs.size(); i++) {
             Parent curRoot = ((Parent) allTabs.get(i).getContent());
             tabs.add(new InsideMainFrameTab(curRoot.lookupAll(".toggle-button"), 
-                curRoot.lookupAll(".anchor-pane"), curRoot.lookup(".stack-pane")));
+                curRoot.lookupAll(".anchor-pane"), curRoot.lookup(".stack-pane"), curRoot.lookup(".tool-bar")));
         }
 
         //tabs.get(1).<Demo>setItemForTable(1, null);
-        PhanThuongCuoiNamGuiController ptcnGuiController = new PhanThuongCuoiNamGuiController(tabs.get(1).getTable(0));
+        PhanThuongCuoiNamGuiController ptcnGuiController = 
+            new PhanThuongCuoiNamGuiController(tabs.get(1).getTable(0), tabs.get(1).getToolBar());
+
+        PhanQuaGuiController phanQuaGuiController =
+            new PhanQuaGuiController(tabs.get(3).getTable(0), tabs.get(3).getToolBar());
         //tabs.get(1).setTable(0, ptcnGuiController.getTable());
+        
     }
 
     public void onClose(){

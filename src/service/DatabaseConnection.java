@@ -42,10 +42,19 @@ public class DatabaseConnection {
         try {
             return statement.executeQuery(query);
         } catch (SQLException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             System.out.println("Cannot execute query to database !!!");
+            
         }
         return null;
+    }
+
+    public static void executeUpdate(String query){
+        try {
+            statement.executeUpdate(query);
+        } catch (SQLException e1) {
+            System.out.println("Cannot execute query to database !!!");
+        }
     }
 
 }

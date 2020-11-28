@@ -1,3 +1,4 @@
+package app;
 
 import controller.guicontroller.MainFrameGUIController;
 import javafx.application.Application;
@@ -23,6 +24,7 @@ public class QuanLyNhanKhau extends Application {
 
     // private static Connection myConnection;
     static MainFrameGUIController mainFrameController;
+    public static Stage primaryStage = null;
     public static void main(String[] args) {
         /*
          * try { myConnection = DriverManager.getConnection(
@@ -67,7 +69,7 @@ public class QuanLyNhanKhau extends Application {
         //root.setStyleSheet("/fxml/MainFrameCss.css");
         /* Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds(); */
-
+        QuanLyNhanKhau.primaryStage = primaryStage;
         Scene scene = new Scene(root);
 
         mainFrameController = (MainFrameGUIController) fxmlLoader.getController();

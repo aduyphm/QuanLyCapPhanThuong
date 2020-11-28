@@ -5,27 +5,34 @@
 }
 
 .tab-label {
-	-fx-pref-width: 380px;
+	-fx-pref-width: 320px;
 	-fx-alignment: center;
+}
+.tab-down-button {
+	-fx-padding: 2;
+}
+
+.tab-down-button .arrow {
+	-fx-padding: 0;
 }
 
 #MainFrame {
 	-fx-font-size: 23px;
 }
 
-#TrangChu {
+.trangChu {
 	-fx-border-style: hidden solid hidden solid;
 	-fx-border-width: 1px;
 }
 
-#TrangChu .tab-label {
-	-fx-pref-width: 200px;
+.trangChu .tab-label {
+	-fx-pref-width: 160px;
 	-fx-alignment: center;
 	-fx-font-size: 23px;
 	//-fx-text-fill: white;
 }
 
-#TrangChu:selected {
+.trangChu:selected {
 	-fx-opacity: 1;
 	-fx-background-color: white;
 	-fx-border-color: #a9a9a9;
@@ -183,7 +190,7 @@
 
 .tool-bar .button:hover {
 	-fx-padding: 0px 0px 0px 0px;
-	-fx-background-color: #dbedff;
+	-fx-background-color: #80ccff;
 }
 
 .tooltip {

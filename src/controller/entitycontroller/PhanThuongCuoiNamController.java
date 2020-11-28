@@ -1,41 +1,25 @@
 package controller.entitycontroller;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.sql.Date;
+//import java.sql.Date;
 
 import entity.HoGiaDinh;
-import entity.PhanThuongCuoiNamRecord;
 
 import service.DatabaseConnection;
 
-public class PhanThuongCuoiNamController {
+public class PhanThuongCuoiNamController extends EntityController<HoGiaDinh>{
     //private ArrayList<PhanThuongCuoiNamRecord> list = null;
 
-    private ArrayList<HoGiaDinh> list = null;
-    private ResultSetMetaData metaData = null;
-
     public PhanThuongCuoiNamController() {
-        getDataFromDatabase(50, 0); //get first page
+        getDataFromDatabase(1, 0); //get first page
     }
 
-    public void addRecord(PhanThuongCuoiNamRecord record) {
-
-    }
-
-    public void updateRecord(int index, PhanThuongCuoiNamRecord newRecord) {
-
-    }
-
-    public void deleteRecord(int index) {
-
-    }
-
+    @Override
     public void getDataFromDatabase(int limit, int page) {
         ResultSet result = DatabaseConnection
-                .executeQuery("Select * from ho_gia_dinh LIMIT " + Integer.toString(limit) + " OFFSET " + Integer.toString(page * 50));
+                .executeQuery("Select * from ho_gia_dinh LIMIT " + Integer.toString(limit) + " OFFSET " + Integer.toString(page * limit));
         if (list != null) {
             list.clear();
         } else {
@@ -61,8 +45,8 @@ public class PhanThuongCuoiNamController {
                     result.getInt("idChuHo"), 
                     result.getString("maKhuVuc"),
                     result.getString("diaChi"), 
-                    Date.valueOf("2000-1-10")
-                    //result.getDate("ngayLap")
+                    //Date.valueOf("2000-1-10")
+                    result.getDate("ngayLap")
                     )
                 );
             }
@@ -77,20 +61,31 @@ public class PhanThuongCuoiNamController {
 
     }
 
-    public ArrayList<HoGiaDinh> getList() {
-        return list;
+    @Override
+    public void addRecord(HoGiaDinh record) {
+        // TODO Auto-generated method stub
+
     }
 
-    public void setList(ArrayList<HoGiaDinh> list) {
-        this.list = list;
+    @Override
+    public void updateRecord(int index, HoGiaDinh newRecord) {
+        // TODO Auto-generated method stub
+
     }
 
-    public ResultSetMetaData getMetaData() {
-        return metaData;
+    public void updateRecord(HoGiaDinh oldRecord, HoGiaDinh newRecord){
+
     }
 
-    public void setMetaData(ResultSetMetaData metaData) {
-        this.metaData = metaData;
+    @Override
+    public void deleteRecord(int index) {
+
+    }
+
+    @Override
+    public void deleteRecord(HoGiaDinh record) {
+        //System.out.println("Delete from ho_gia_dinh where ho_gia_dinh.ID = " + record.getID());
+        DatabaseConnection.executeUpdate("Delete from ho_gia_dinh where ho_gia_dinh.ID = " + record.getID() + ";");
     }
 
 }
