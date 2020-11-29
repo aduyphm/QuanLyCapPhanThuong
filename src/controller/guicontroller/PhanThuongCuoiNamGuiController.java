@@ -15,21 +15,24 @@ public class PhanThuongCuoiNamGuiController extends TableController<HoGiaDinh>{
     }
 
     @Override
-    public void addRecord() {
+    public boolean addRecord() {
         System.out.println("Add record");
         /* for(Node node : addFormRoot.lookupAll("")){
             
         } */
+        return true;
     }
 
     @Override
-    public void updateRecord() {
+    public boolean updateRecord() {
         System.out.println("Update record");
+        return true;
     }
 
     @Override
-    public void deleteRecord() {
+    public boolean deleteRecord() {
         System.out.println("Delete record");
+        return true;
         //controller.deleteRecord(table.getItems().remove(selectedRow));
     }
 

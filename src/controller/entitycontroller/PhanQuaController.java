@@ -39,7 +39,14 @@ public class PhanQuaController extends EntityController<PhanQua> {
 
     @Override
     public void addRecord(PhanQua record) {
-        // TODO Auto-generated method stub
+        DatabaseConnection.executeUpdate(
+            "INSERT INTO phan_qua VALUES (" 
+            + record.getID() + ", '"
+            + record.getMaPhanQua() + "', '"
+            + record.getLoaiQua() + "', "
+            + record.getGiaTri() + ", '"
+            + record.getMoTa() + "')"
+            );
 
     }
 

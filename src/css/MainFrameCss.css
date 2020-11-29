@@ -10,6 +10,7 @@
 }
 .tab-down-button {
 	-fx-padding: 2;
+	-fx-background-color: transparent;
 }
 
 .tab-down-button .arrow {

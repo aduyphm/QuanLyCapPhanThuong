@@ -259,10 +259,12 @@ public abstract class TableController<T> {
                             ((Button)node).setOnAction(new EventHandler<ActionEvent>(){
                                 @Override 
                                 public void handle(ActionEvent e) { 
-                                    QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
-                                    addRecord();
-                                    demo.close();
-                                    demo.setScene(null);
+                                    demo.setAlwaysOnTop(false);
+                                    if(addRecord()){
+                                        QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
+                                        demo.close();
+                                    }
+                                    demo.setAlwaysOnTop(true);
                                 } 
                             });
                         }
@@ -346,11 +348,11 @@ public abstract class TableController<T> {
     }
 
 
-    public abstract void addRecord();
+    public abstract boolean addRecord();
 
-    public abstract void updateRecord();
+    public abstract boolean updateRecord();
 
-    public abstract void deleteRecord();
+    public abstract boolean deleteRecord();
 
     public String getAddForm() {
         return addForm;

@@ -12,12 +12,12 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField layoutX="145.0" layoutY="290.0" promptText="Mã hộ gia đình">
+      <TextField layoutX="145.0" layoutY="290.0" promptText="Mã phần quà">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField layoutX="145.0" layoutY="403.0" promptText="Id chủ hộ">
+      <TextField layoutX="145.0" layoutY="403.0" promptText="Loại quà">
          <font>
             <Font size="24.0" />
          </font>
@@ -27,12 +27,12 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField layoutX="553.0" layoutY="180.0" promptText="Địa chỉ">
+      <TextField layoutX="553.0" layoutY="180.0" promptText="Giá trị">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField layoutX="553.0" layoutY="290.0" promptText="Ngày lập">
+      <TextField layoutX="553.0" layoutY="290.0" promptText="Mô tả">
          <font>
             <Font size="24.0" />
          </font>
