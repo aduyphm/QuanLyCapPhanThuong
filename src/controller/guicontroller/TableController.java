@@ -109,6 +109,78 @@ public abstract class TableController<T> {
 
     }
 
+    public TableController(TableView<T> table, ToolBar toolBar, EntityController<T> controller,
+            String[] displayColumnList, String[] listLabelsToDisplay, int numRecordPerPage) {
+        this.toolBar = toolBar;
+        this.table = table;
+        this.controller = controller;
+        this.numRecordPerPage = numRecordPerPage;
+
+        controller.getDataFromDatabase(numRecordPerPage, 0);
+
+        service.TableLayout.layoutTable(table, Arrays.asList(displayColumnList), Arrays.asList(listLabelsToDisplay));
+
+        table.setItems(FXCollections.observableArrayList(controller.getList()));
+
+        toolBar.getItems().get(0).setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent arg0) {
+                if (hasNext) {
+                    page++;
+                    controller.getDataFromDatabase(numRecordPerPage, page);
+                    if(controller.getList().size() == 0){
+                        page--;
+                    }else{
+                        if (controller.getList().size() != numRecordPerPage - 1)
+                        hasNext = false;
+                        table.setItems(FXCollections.observableArrayList(controller.getList()));
+                    }
+                    
+                }
+            }
+
+        });
+
+        toolBar.getItems().get(1).setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent arg0) {
+                if (page > 0) {
+                    page--;
+                    controller.getDataFromDatabase(numRecordPerPage, page);
+                    table.setItems(FXCollections.observableArrayList(controller.getList()));
+                    hasNext = true;
+                }
+            }
+
+        });
+
+        setUpAddButton();
+        setUpDeleteButton();
+        setUpUpdateButton();
+
+        table.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<T>() {
+
+            @Override
+            public void onChanged(Change<? extends T> arg0) {
+                //System.out.println(arg0.getList().get(0)); 
+                if(arg0.getList().size() != 0)
+                {
+                    selectedItem = arg0.getList().get(0);
+                    selectedRow = table.getSelectionModel().getSelectedIndex();
+                    //System.out.println(selectedRow);
+                    toolBar.getItems().get(4).setDisable(false);
+                    toolBar.getItems().get(3).setDisable(false);
+                    firstClickOnTable();
+                }
+            }
+            
+        });
+        
+
+    }
+
     private void setUpUpdateButton() {
 
         toolBar.getItems().get(3).setDisable(true);
@@ -131,6 +203,8 @@ public abstract class TableController<T> {
                     demo.setResizable(false);
                     demo.setScene(scene); 
                     demo.setAlwaysOnTop(true);
+
+                    prepareUpdateRecord();
 
                     for(Node node : updateFormRoot.lookupAll(".button")){
                         String s = ((Button)node).getText();
@@ -250,6 +324,8 @@ public abstract class TableController<T> {
                     demo.setResizable(false);
                     demo.setScene(scene); 
                     demo.setAlwaysOnTop(true);
+
+                    prepareAddRecord();
                     
                     //demo.initModality(Modality.Ưi);
 
@@ -347,9 +423,71 @@ public abstract class TableController<T> {
         this.updateForm = updateForm;
     }
 
+    public void showAForm(Parent parent){
+        Stage demo = new Stage();
+        Scene scene = new Scene(parent); 
 
+        demo.setResizable(false);
+        demo.setScene(scene); 
+        demo.setAlwaysOnTop(true);
+
+        for(Node node : parent.lookupAll(".button")){
+            String s = ((Button)node).getText();
+            if(s.equals("Apply")){
+                ((Button)node).setOnAction(new EventHandler<ActionEvent>(){
+                    @Override 
+                    public void handle(ActionEvent e) { 
+                        demo.setAlwaysOnTop(false);
+                        if(actionOnForm()){
+                            QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
+                            demo.close();
+                        }
+                        demo.setAlwaysOnTop(true);
+                    } 
+                });
+            }
+
+            if(s.equals("Cancel")){
+                ((Button)node).setOnAction(new EventHandler<ActionEvent>(){
+                    @Override 
+                    public void handle(ActionEvent e) { 
+                        QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
+                        demo.close();
+                    } 
+                });
+            }
+        }
+
+        demo.setOnCloseRequest(s->{
+            QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
+            demo.close();
+        });
+
+        demo.show();
+    }
+
+    public boolean actionOnForm(){
+        return true;
+    }
+
+    public Parent createAForm(String path){
+        try {
+
+            Parent outParent = FXMLLoader.load(getClass().getResource(path));
+            return outParent;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+       
+    }
+    public void firstClickOnTable(){};
+
+    public void prepareAddRecord(){};
     public abstract boolean addRecord();
 
+    public void prepareUpdateRecord(){};
     public abstract boolean updateRecord();
 
     public abstract boolean deleteRecord();

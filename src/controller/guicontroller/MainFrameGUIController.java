@@ -173,6 +173,9 @@ public class MainFrameGUIController extends Node implements Initializable {
 
         PhanQuaGuiController phanQuaGuiController =
             new PhanQuaGuiController(tabs.get(3).getTable(0), tabs.get(3).getToolBar());
+
+        ChauNhoNhanQuaTableController chauNhoNhanQuaTableController =
+            new ChauNhoNhanQuaTableController(tabs.get(2).getTable(0), tabs.get(2).getToolBar());
         //tabs.get(1).setTable(0, ptcnGuiController.getTable());
         
     }

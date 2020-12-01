@@ -26,7 +26,7 @@ public abstract class EntityController <T> {
 
     public abstract void getDataFromDatabase(int limit, int page);
     public abstract void addRecord(T record);
-    public abstract void updateRecord(int index, T newRecord);
+    public abstract void updateRecord(T newRecord);
     public abstract void updateRecord(T oldRecord, T newRecord);
     public abstract void deleteRecord(int index);
     public abstract void deleteRecord(T record);

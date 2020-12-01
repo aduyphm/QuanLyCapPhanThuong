@@ -41,7 +41,6 @@ public class PhanThuongCuoiNamController extends EntityController<HoGiaDinh>{
                 ); */
                 list.add(new HoGiaDinh(
                     result.getInt("ID"), 
-                    result.getString("maHoGiaDinh"), 
                     result.getInt("idChuHo"), 
                     result.getString("maKhuVuc"),
                     result.getString("diaChi"), 
@@ -68,7 +67,7 @@ public class PhanThuongCuoiNamController extends EntityController<HoGiaDinh>{
     }
 
     @Override
-    public void updateRecord(int index, HoGiaDinh newRecord) {
+    public void updateRecord(HoGiaDinh newRecord) {
         // TODO Auto-generated method stub
 
     }

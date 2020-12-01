@@ -5,11 +5,11 @@
 }
 
 .tab-label {
-	-fx-pref-width: 320px;
+	-fx-pref-width: 324px;
 	-fx-alignment: center;
 }
 .tab-down-button {
-	-fx-padding: 2;
+	-fx-padding: 5;
 	-fx-background-color: transparent;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .trangChu .tab-label {
-	-fx-pref-width: 160px;
+	-fx-pref-width: 130px;
 	-fx-alignment: center;
 	-fx-font-size: 23px;
 	//-fx-text-fill: white;
@@ -84,11 +84,11 @@
 }
 
 .stack-pane {
-	-fx-padding: 0px 0px 0px 15px;
+	-fx-padding: 0px 0px 0px 5px;
 }
 
 .tab-pane .tab-header-area {
-	-fx-padding: -3px 0px -1px 205px;
+	-fx-padding: -3px 0px -1px 207.5px;
 }
 
 .toggle-button {
@@ -145,7 +145,7 @@
 }
 
 .table-view .column-header-background{
-	-fx-padding: 0 25px 0 0;
+	-fx-padding: 0px 25px 0px 0px;
 }
 
 .table-view .table-row-cell {

@@ -3,7 +3,6 @@ package entity;
 public class PhanQua {
 
 	private int ID;
-	private String maPhanQua;
 	private String loaiQua;
 	private int giaTri;
 	private String moTa;
@@ -13,12 +12,6 @@ public class PhanQua {
 	}
 	public void setID(int iD) {
 		ID = iD;
-	}
-	public String getMaPhanQua() {
-		return maPhanQua;
-	}
-	public void setMaPhanQua(String maPhanQua) {
-		this.maPhanQua = maPhanQua;
 	}
 	public String getLoaiQua() {
 		return loaiQua;
@@ -39,10 +32,9 @@ public class PhanQua {
 		this.moTa = moTa;
 	}
 	
-	public PhanQua(int iD, String maPhanQua, String loaiQua, int giaTri, String moTa) {
+	public PhanQua(int iD, String loaiQua, int giaTri, String moTa) {
 		super();
 		ID = iD;
-		this.maPhanQua = maPhanQua;
 		this.loaiQua = loaiQua;
 		this.giaTri = giaTri;
 		this.moTa = moTa;

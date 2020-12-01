@@ -19,6 +19,7 @@
                      <children>
                         <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Tổng quan" />
                         <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Lịch" />
+                        <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Thông tin tài khoản" />
                      </children>
                   </VBox>
                   <StackPane prefHeight="658.0" prefWidth="1157.0" styleClass="stack-pane">
@@ -30,6 +31,11 @@
                         <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
                            <children>
                               <Label layoutX="472.0" layoutY="300.0" text="Đây là lịch" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="472.0" AnchorPane.rightAnchor="471.0" AnchorPane.topAnchor="300.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
+                           <children>
+                              <Label layoutX="429.0" layoutY="300.0" prefHeight="34.0" prefWidth="208.0" text="Thông tin tài khoản" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="429.0" AnchorPane.rightAnchor="428.0" AnchorPane.topAnchor="300.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -234,36 +240,39 @@
                   <ToolBar orientation="VERTICAL" prefHeight="667.0" prefWidth="50.0">
                      <items>
                         <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                            <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                              <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
                                  <image>
                                     <Image url="icons/rightArrowIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <tooltip>
-                              <Tooltip text="This is tooltip text" />
-                           </tooltip>
-                        </Button>
-                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
-                           <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0">
-                                 <image>
-                                    <Image url="icons/leftArrowIcon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
                            <tooltip>
                               <Tooltip text="Empty Tooltip" />
                            </tooltip>
                         </Button>
                         <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
+                                 <image>
+                                    <Image url="icons/leftArrowIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Empty Tooltip" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0">
                                  <image>
@@ -271,9 +280,36 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                           <tooltip>
+                              <Tooltip text="Empty Tooltip" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/editIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Empty Tooltip" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/deleteIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                            <tooltip>
                               <Tooltip text="Empty Tooltip" />
                            </tooltip>
@@ -398,6 +434,21 @@
                               <ImageView fitHeight="30.0" fitWidth="30.0">
                                  <image>
                                     <Image url="icons/deleteIcon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Empty Tooltip" />
+                           </tooltip>
+                        </Button>
+                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Button">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="icons/viewDetailsIcon.png" />
                                  </image>
                               </ImageView>
                            </graphic>

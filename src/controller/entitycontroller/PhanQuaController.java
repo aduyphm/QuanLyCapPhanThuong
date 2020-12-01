@@ -24,7 +24,6 @@ public class PhanQuaController extends EntityController<PhanQua> {
             while (result.next()) {
                 list.add(new PhanQua(
                     result.getInt("ID"), 
-                    result.getString("maPhanQua"), 
                     result.getString("loaiQua"),
                     result.getInt("giaTri"), 
                     result.getString("moTa")
@@ -40,9 +39,7 @@ public class PhanQuaController extends EntityController<PhanQua> {
     @Override
     public void addRecord(PhanQua record) {
         DatabaseConnection.executeUpdate(
-            "INSERT INTO phan_qua VALUES (" 
-            + record.getID() + ", '"
-            + record.getMaPhanQua() + "', '"
+            "INSERT INTO phan_qua VALUES (null, '"
             + record.getLoaiQua() + "', "
             + record.getGiaTri() + ", '"
             + record.getMoTa() + "')"
@@ -51,14 +48,17 @@ public class PhanQuaController extends EntityController<PhanQua> {
     }
 
     @Override
-    public void updateRecord(int index, PhanQua newRecord) {
-        // TODO Auto-generated method stub
-
+    public void updateRecord(PhanQua newRecord) {
+        DatabaseConnection.executeUpdate("UPDATE phan_qua SET phan_qua.moTa = '"
+        + newRecord.getMoTa()
+        + "', phan_qua.giaTri = " + newRecord.getGiaTri() 
+        +", phan_qua.loaiQua = '" + newRecord.getLoaiQua()
+        + "' WHERE phan_qua.ID = "+ newRecord.getID());
     }
 
     @Override
     public void updateRecord(PhanQua oldRecord, PhanQua newRecord) {
-        // TODO Auto-generated method stub
+        
 
     }
 
