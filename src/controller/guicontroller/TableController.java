@@ -212,9 +212,12 @@ public abstract class TableController<T> {
                             ((Button)node).setOnAction(new EventHandler<ActionEvent>(){
                                 @Override 
                                 public void handle(ActionEvent e) { 
-                                    QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
-                                    updateRecord();
-                                    demo.close();
+                                    demo.setAlwaysOnTop(false);
+                                    if(updateRecord()){
+                                        QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
+                                        demo.close();
+                                    }
+                                    demo.setAlwaysOnTop(true);
                                 } 
                             });
                         }
@@ -424,6 +427,7 @@ public abstract class TableController<T> {
     }
 
     public void showAForm(Parent parent){
+        QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(true);
         Stage demo = new Stage();
         Scene scene = new Scene(parent); 
 
@@ -462,7 +466,7 @@ public abstract class TableController<T> {
             QuanLyNhanKhau.primaryStage.getScene().getRoot().setDisable(false);
             demo.close();
         });
-
+        
         demo.show();
     }
 

@@ -3,23 +3,20 @@ package entity;
 public class HocSinh {
 
 	private int ID;
-	private int idNhanKhau;
+	private String hoTen;
 	private String lop;
 	private String truong;
 	private String hocLuc;
 	private String thanhTichDacBiet;
+	private String diaChi;
+	private String minhChungHocLuc;
+	private String minhChungThanhTich;
 	
 	public int getID() {
 		return ID;
 	}
 	public void setID(int iD) {
 		ID = iD;
-	}
-	public int getIdNhanKhau() {
-		return idNhanKhau;
-	}
-	public void setIdNhanKhau(int idNhanKhau) {
-		this.idNhanKhau = idNhanKhau;
 	}
 	public String getLop() {
 		return lop;
@@ -45,15 +42,50 @@ public class HocSinh {
 	public void setThanhTichDacBiet(String thanhTichDacBiet) {
 		this.thanhTichDacBiet = thanhTichDacBiet;
 	}
-	
-	public HocSinh(int iD, int idNhanKhau, String lop, String truong, String hocLuc, String thanhTichDacBiet) {
-		super();
+
+	public String getHoTen() {
+		return hoTen;
+	}
+
+	public void setHoTen(String hoTen) {
+		this.hoTen = hoTen;
+	}
+
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+
+	public String getMinhChungHocLuc() {
+		return minhChungHocLuc;
+	}
+
+	public void setMinhChungHocLuc(String minhChungHocLuc) {
+		this.minhChungHocLuc = minhChungHocLuc;
+	}
+
+	public String getMinhChungThanhTich() {
+		return minhChungThanhTich;
+	}
+
+	public void setMinhChungThanhTich(String minhChungThanhTich) {
+		this.minhChungThanhTich = minhChungThanhTich;
+	}
+
+	public HocSinh(int iD, String hoTen, String lop, String truong, String hocLuc,
+			String thanhTichDacBiet, String diaChi, String minhChungHocLuc, String minhChungThanhTich) {
 		ID = iD;
-		this.idNhanKhau = idNhanKhau;
+		this.hoTen = hoTen;
 		this.lop = lop;
 		this.truong = truong;
 		this.hocLuc = hocLuc;
 		this.thanhTichDacBiet = thanhTichDacBiet;
+		this.diaChi = diaChi;
+		this.minhChungHocLuc = minhChungHocLuc;
+		this.minhChungThanhTich = minhChungThanhTich;
 	}
 	
 }

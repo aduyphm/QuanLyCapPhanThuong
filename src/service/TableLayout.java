@@ -15,7 +15,7 @@ import javafx.util.Callback;
 public class TableLayout {
 
     private static String keyWord[] = {"id", "ngay" };
-    private static String labelDisplayKey[] = {"Tuổi", "Giá trị"};
+    private static String labelDisplayKey[] = {"Tuổi", "Giá trị", "Lớp"};
 
     public static void layoutTable(TableView table, ResultSetMetaData metaData, List<String> listToDisplay) {
         table.getColumns().clear();

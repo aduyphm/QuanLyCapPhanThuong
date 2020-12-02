@@ -168,14 +168,16 @@ public class MainFrameGUIController extends Node implements Initializable {
         }
 
         //tabs.get(1).<Demo>setItemForTable(1, null);
-        PhanThuongCuoiNamGuiController ptcnGuiController = 
-            new PhanThuongCuoiNamGuiController(tabs.get(1).getTable(0), tabs.get(1).getToolBar());
+        //PhanThuongCuoiNamGuiController ptcnGuiController = 
+            //new PhanThuongCuoiNamGuiController(tabs.get(1).getTable(0), tabs.get(1).getToolBar());
 
         PhanQuaGuiController phanQuaGuiController =
             new PhanQuaGuiController(tabs.get(3).getTable(0), tabs.get(3).getToolBar());
 
         ChauNhoNhanQuaTableController chauNhoNhanQuaTableController =
             new ChauNhoNhanQuaTableController(tabs.get(2).getTable(0), tabs.get(2).getToolBar());
+
+        DSHocSinhController dsHocSinhController = new DSHocSinhController(tabs.get(1).getTable(0), tabs.get(1).getToolBar());
         //tabs.get(1).setTable(0, ptcnGuiController.getTable());
         
     }
