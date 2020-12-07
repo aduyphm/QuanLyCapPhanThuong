@@ -13,12 +13,12 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Text>
-      <TextField layoutX="656.0" layoutY="159.0" prefHeight="45.0" prefWidth="243.0">
+      <TextField layoutX="656.0" layoutY="159.0" prefHeight="45.0" prefWidth="243.0" promptText="Năm học">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <DatePicker layoutX="251.0" layoutY="160.0" prefHeight="45.0" prefWidth="250.0" />
+      <DatePicker editable="false" layoutX="251.0" layoutY="160.0" prefHeight="45.0" prefWidth="250.0" />
       <Text layoutX="87.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ngày phát quà:">
          <font>
             <Font size="20.0" />
@@ -34,12 +34,12 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="323.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng quà: ">
+      <Text layoutX="288.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng quà: ">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="630.0" layoutY="550.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng tiền:">
+      <Text layoutX="606.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tổng tiền:">
          <font>
             <Font size="20.0" />
          </font>
@@ -54,26 +54,34 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <ComboBox layoutX="416.0" layoutY="258.0" prefHeight="45.0" prefWidth="486.0" promptText="Chọn quà" />
-      <Button layoutX="116.0" layoutY="521.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" text="Dự tính">
+      <ComboBox layoutX="416.0" layoutY="258.0" prefHeight="45.0" prefWidth="486.0" promptText="Quà cho học sinh giỏi" />
+      <Button layoutX="87.0" layoutY="520.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="135.0" text="Dự tính">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TextArea editable="false" layoutX="439.0" layoutY="522.0" prefHeight="44.0" prefWidth="149.0" />
-      <TextArea editable="false" layoutX="734.0" layoutY="521.0" prefHeight="45.0" prefWidth="168.0" />
       <Text layoutX="87.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quà cho học sinh tiên tiến:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <ComboBox layoutX="416.0" layoutY="337.0" prefHeight="45.0" prefWidth="486.0" promptText="Chọn quà" />
-      <ComboBox layoutX="416.0" layoutY="418.0" prefHeight="45.0" prefWidth="486.0" promptText="Chọn quà" />
+      <ComboBox layoutX="416.0" layoutY="337.0" prefHeight="45.0" prefWidth="486.0" promptText="Quà cho học sinh tiên tiến" />
+      <ComboBox layoutX="416.0" layoutY="418.0" prefHeight="45.0" prefWidth="486.0" promptText="Quà cho học sinh trung bình" />
       <Text layoutX="87.0" layoutY="447.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quà cho học sinh trung bình:">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Label layoutX="116.0" layoutY="579.0" text="Click vào đây để ước tính" textFill="#f20a0a" />
+      <Label layoutX="87.0" layoutY="580.0" text="Click vào đây để ước tính" textFill="#f20a0a" />
+      <TextField editable="false" layoutX="389.0" layoutY="520.0" prefHeight="45.0" prefWidth="193.0" promptText="Tổng quà sẽ phát">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField editable="false" layoutX="704.0" layoutY="519.0" prefHeight="45.0" prefWidth="193.0" promptText="Tổng tiền phải chi">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

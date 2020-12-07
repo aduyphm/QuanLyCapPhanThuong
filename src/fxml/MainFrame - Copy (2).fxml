@@ -18,192 +18,24 @@
                   <VBox prefHeight="658.0" prefWidth="194.0" styleClass="vbox">
                      <children>
                         <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Tổng quan" />
+                        <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Lịch" />
                         <ToggleButton mnemonicParsing="false" prefHeight="50.0" prefWidth="207.0" text="Thông tin tài khoản" />
                      </children>
                   </VBox>
-                  <StackPane prefWidth="1920.0" styleClass="stack-pane">
+                  <StackPane prefHeight="658.0" prefWidth="1157.0" styleClass="stack-pane">
                      <children>
-                        <AnchorPane style="-fx-background-color: WHITE;" styleClass="anchor-pane">
+                        <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
                            <children>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" layoutX="55.0" layoutY="469.0" preserveRatio="true" AnchorPane.leftAnchor="55.0">
-                                 <image>
-                                    <Image url="icons/children.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" layoutX="55.0" layoutY="58.0" preserveRatio="true" AnchorPane.leftAnchor="55.0">
-                                 <image>
-                                    <Image url="icons/people.jpg" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="133.0" fitWidth="133.0" layoutX="55.0" layoutY="268.0" preserveRatio="true" AnchorPane.leftAnchor="55.0">
-                                 <image>
-                                    <Image url="icons/house.png" />
-                                 </image>
-                              </ImageView>
-                              <AnchorPane layoutX="219.0" layoutY="58.0" prefHeight="133.0" prefWidth="782.0" style="-fx-background-color: #00796b;" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="64.0">
-                                 <children>
-                                    <Text fill="WHITE" layoutX="34.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số nhân khẩu có trên địa bàn:">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Text>
-                                    <Label fx:id="lb_nhankhau" layoutX="34.0" layoutY="67.0" style="-fx-text-fill: white;" text="Label" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="36.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="219.0" layoutY="268.0" prefHeight="133.0" prefWidth="782.0" style="-fx-background-color: #00796b;" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="64.0">
-                                 <children>
-                                    <Text fill="WHITE" layoutX="34.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số hộ gia đình:">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Text>
-                                    <Label fx:id="lb_hogiadinh" layoutX="34.0" layoutY="67.0" text="Label" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="36.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="219.0" layoutY="469.0" prefHeight="133.0" prefWidth="282.0" style="-fx-background-color: #00796b;" AnchorPane.leftAnchor="219.0">
-                                 <children>
-                                    <Text fill="WHITE" layoutX="34.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số cháu nhỏ:">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Text>
-                                    <Label fx:id="lb_sochaunho" layoutX="34.0" layoutY="67.0" text="Label" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="36.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane layoutX="719.0" layoutY="469.0" prefHeight="133.0" prefWidth="282.0" style="-fx-background-color: #00796b;" AnchorPane.rightAnchor="64.0">
-                                 <children>
-                                    <Text fill="WHITE" layoutX="34.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Số học sinh:">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Text>
-                                    <Label fx:id="lb_sohocsinh" layoutX="34.0" layoutY="67.0" text="Label" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="36.0" />
-                                       </font>
-                                    </Label>
-                                    <ImageView fitHeight="133.0" fitWidth="133.0" layoutX="-180.0" preserveRatio="true" AnchorPane.leftAnchor="-180.0">
-                                       <image>
-                                          <Image url="icons/student.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </AnchorPane>
+                              <Label text="Đây là tổng quan" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="472.0" AnchorPane.rightAnchor="397.0" AnchorPane.topAnchor="300.0" />
+                           </children></AnchorPane>
+                        <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
+                           <children>
+                              <Label layoutX="472.0" layoutY="300.0" text="Đây là lịch" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="472.0" AnchorPane.rightAnchor="471.0" AnchorPane.topAnchor="300.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane style="-fx-background-color: white;" styleClass="anchor-pane">
+                        <AnchorPane prefHeight="800.0" prefWidth="1200.0" styleClass="anchor-pane">
                            <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a5d6a7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="71.0" layoutY="63.0">
-                                       <image>
-                                          <Image url="icons/avata.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label fx:id="lb_hovaten" layoutX="358.0" layoutY="63.0" text="Họ và tên:">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="lb_username" layoutX="358.0" layoutY="129.0" text="User: ">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </Pane>
-                              <Label layoutX="668.0" layoutY="303.0" text="Chức vụ:" textFill="#2b1fae">
-                                 <font>
-                                    <Font name="System Bold Italic" size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lb_email" layoutX="310.0" layoutY="521.0" text="Label">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="80.0" layoutY="303.0" text="Thông tin liên lạc:" textFill="#dd2424">
-                                 <font>
-                                    <Font name="System Bold Italic" size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="153.0" layoutY="521.0" text="Email:">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="153.0" layoutY="591.0" text="Facebook:">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="153.0" layoutY="451.0" text="Địa chỉ:">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lb_facebook" layoutX="310.0" layoutY="591.0" text="Label">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lb_diachi" layoutX="310.0" layoutY="451.0" text="Label">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lb_chucvu" layoutX="798.0" layoutY="303.0" text="Label">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lb_sodienthoai" layoutX="310.0" layoutY="381.0" text="Label">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="153.0" layoutY="381.0" text="Số điện thoại:">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="80.0" layoutY="379.0">
-                                 <image>
-                                    <Image url="icons/phone.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="80.0" layoutY="449.0">
-                                 <image>
-                                    <Image url="icons/address.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="80.0" layoutY="519.0">
-                                 <image>
-                                    <Image url="icons/email.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="80.0" layoutY="589.0">
-                                 <image>
-                                    <Image url="icons/facebook.jpg" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="865.0" layoutY="145.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="199.0" style="-fx-background-color: white; -fx-border-color: #00bfa5; -fx-border-width: 2px 2px 2px 2px;" text="Đổi mật khẩu" AnchorPane.rightAnchor="0.0">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Button>
+                              <Label layoutX="429.0" layoutY="300.0" prefHeight="34.0" prefWidth="208.0" text="Thông tin tài khoản" AnchorPane.bottomAnchor="334.0" AnchorPane.leftAnchor="429.0" AnchorPane.rightAnchor="428.0" AnchorPane.topAnchor="300.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -221,12 +53,6 @@
                         <ToggleButton fx:id="dsHsPTKhuyenHoc" mnemonicParsing="false" prefHeight="50.0" prefWidth="285.0" text="Danh sách" />
                         <ToggleButton fx:id="dsPTKHTheoNha" mnemonicParsing="false" prefHeight="50.0" prefWidth="195.0" text="Thống kê theo nhà" />
                         <ToggleButton fx:id="dsPTKHTheoDip" mnemonicParsing="false" prefHeight="50.0" prefWidth="195.0" text="Thống kê theo dịp" />
-                        <Label prefHeight="172.0" prefWidth="11.0" />
-                        <Label id="phanThuongCuoiNamLabel" alignment="CENTER" contentDisplay="RIGHT" prefHeight="157.0" prefWidth="200.0" textAlignment="CENTER" wrapText="true">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
                      </children>
                   </VBox>
                   <StackPane prefWidth="3000.0" styleClass="stack-pane">

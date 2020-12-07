@@ -177,8 +177,13 @@ public abstract class TableController<T> {
             }
             
         });
-        
 
+    }
+
+    public TableController(InsideMainFrameTab tab, int index, EntityController<T> controller,
+        String[] displayColumnList, String[] listLabelsToDisplay, int numRecordPerPage){
+        this(tab.getTable(index), tab.getToolBar()[index], controller, displayColumnList, listLabelsToDisplay, numRecordPerPage);
+        tab.getTableControllers().add(this);
     }
 
     private void setUpUpdateButton() {
@@ -486,6 +491,15 @@ public abstract class TableController<T> {
         }
        
     }
+
+    public void disable(int start, int end){
+        int index = 0;
+        for (Node node : toolBar.getItems()) {
+            if(index >= start && index < end) node.setDisable(true);
+            index++;
+        }
+    }
+    
     public void firstClickOnTable(){};
 
     public void prepareAddRecord(){};
@@ -495,6 +509,8 @@ public abstract class TableController<T> {
     public abstract boolean updateRecord();
 
     public abstract boolean deleteRecord();
+
+    public void onShowing(int index){}
 
     public String getAddForm() {
         return addForm;

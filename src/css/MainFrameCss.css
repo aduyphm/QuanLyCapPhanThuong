@@ -242,3 +242,7 @@
 	-fx-background-color: #D3D3D3;
 	-fx-background-radius: 0;
 }
+
+#phanThuongCuoiNamLabel{
+	-fx-text-fill: black;
+}
